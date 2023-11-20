@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="troodon.png" type="image/x-icon">
+    <title>Akila Wanninayake</title>
+    <!-- Add Bootstrap CSS CDN link -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @media only screen and (max-width: 600px) {
+            body{
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .section_1{
+                transition: all 1s ease-in-out;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .containers {
+                flex-direction: column-reverse;
+            }
+
+            .cols {
+                width: 100%;
+            }
+
+            #right img {
+                width: 100%;
+                height: auto;
+            }
+            .navbar-header img{
+                align-items: start;
+            }
+            .section-2{
+                margin-top: 50px;
+            }
+        }
+        #typewriters{
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column-reverse; /* Reverse column order on smaller screens */
+            }
+            #left, #right {
+                width: 100%; /* Full width for both columns */
+            }
+            #typewriters{
+                content: visible;
+                text-align: center;
+                align-items: center;
+            }
+            #typewriter{
+                content: hidden;
+            }
+        }
+            
+
+        #scrollToTop {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 100px;
+            z-index: 999;
+            font-size: 18px;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #scrollToTop:hover{
+        box-shadow: 0 0 2px #fdfdfd, 0 0 2px #ffffff, 0 0 2px #ffffff;
+        }
+
+        .section_1 {
+        background: #edf4ff;
+        height: 100vh; /* Ensure the section covers the full height of the viewport */
+        display: flex;
+        align-items: center;
+
+        }
+
+        .line {
+            border: none;
+            width: 200px; /* Set the width according to your text width */
+            height: 5px;
+            background-color:#0d6efd;
+        }
+
+
+        .section_1 {
+        transition: all 1s ease-in-out;
+        }
+
+        /*nav bar fix*/
+        .navbar {
+            
+            justify-content: flex-start; /* Align elements to the left */
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #edf4ff;
+            z-index: 1000;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            border-style: none;
+            padding: 10px 20px; /* Adjust padding as needed */
+            
+            }
+            .navbar-header {
+            margin-right: auto; /* Pushes the menu icon to the left */
+            }
+
+            #menuBtn {
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
+            padding: 3px;
+            }
+
+            #menuBtn img:hover {
+            box-shadow: 0 0 2px #fbfbfb, 0 0 2px #ffffff, 0 0 2px #fcfcfc;
+            }
+
+        /* Style for the menu overlay */
+        .overlay {
+            height: 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-y: hidden;
+            transition: 0.5s;
+            z-index: 999;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 10%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .overlay-content a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 34px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .overlay-content a:hover{
+            color: #f1f1f1;
+        }
+        .overlay-content .social-icons a:hover{
+            box-shadow: 0 0 2px #ffff00, 0 0 2px #ffffff, 0 0 2px #ffff00;
+        }
+
+        .overlay-content .social-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Show the menu overlay */
+        .open {
+            height: 100%;
+        }
+        
+        /* CSS styles for the typewriter effect */
+        #typewriter {
+        font-family: 'helvetica', sans-serif;
+        font-size: 50px;
+        font-weight: bold;
+        padding: 20px;
+        width: max-content; /* Adjusted width */
+        margin-top:20px auto ;
+        margin-bottom:10px auto ;
+        margin-left: 20px auto;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative; /* Add relative position */
+        }
+
+        /* Animation for the blinking cursor */
+        #typewriter::after {
+        content: '';
+        display: inline-block;
+        width: 0.2em; /* Adjust width */
+        height: 1em; /* Adjust height */
+        background-color: #000; /* Set cursor color */
+        margin-left: 0.1em; /* Adjust position */
+        animation: blink-caret 0.75s step-end infinite;
+        }
+
+        /* Blinking cursor animation */
+        @keyframes blink-caret {
+        from, to {
+            background-color: transparent;
+        }
+        50% {
+            background-color: #000;
+        }
+        }
+
+        .button{
+            margin-top: 5vh;
+        }
+
+        .button button{
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 15px 25px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button button:hover{
+            background-color: #e7edf7;
+            color: #000000;
+            box-shadow: 0 0 3px #0d6efd, 0 0 3px #221515, 0 0 3px #0d6efd;
+        }
+
+        .left .social-icons{
+            margin: none;
+        }
+        .navbar {
+        transition: background-color 0.5s ease;
+        }
+
+        .scrolled {
+        background-color: white;
+        }
+
+        /*Section 2*/
+        .topText h1{
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0d6efd;
+            border-radius: 5px;
+            color: white;
+
+        }
+
+        .topText {
+        padding-top: 30px;
+        width: fit-content;
+        justify-content: center; /* Horizontally center */
+        align-items: center; /* Vertically center */
+         /* Adjust this margin as needed */
+        }
+
+        .row .col #img{
+        width: 90%;
+        height: 90%;
+        }
+
+        .section_2{
+            background-color: #f8f8f8;
+        }
+
+        .parallel{
+            
+        }
+        .container .row .col #nameStyle{
+            font-weight: bold;
+            text-decoration: underline;
+            text-decoration-color: #0d6efd;
+        }
+
+
+    /*section_3*/
+        .section_3 .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        .section_3 .row {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 10px; /* Adjust padding as needed */
+        }
+
+        .section_3 .square {
+            display: flex;
+            padding-top: 10px;
+            flex-direction: column;
+            align-items: center;
+            width: 550px; /* Set width for each square */
+            height: 320px; /* Set height for each square */
+            margin: 5px; /* Set margin between squares */
+            background-color: white;
+            border-radius: 10px;
+            border-style: none;
+            border-width: 2px; /* Background color for squares */
+        }
+
+        .section_3 .square p {
+            text-align: center;
+            margin: 0;
+        }
+
+        #project-description{
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        /*#back{
+            background-image: url(back1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }*/
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+
+        /*section_4*/
+        .section_4{
+            background-color: #f8f8f8;
+        }
+        /* Adjust the styles according to your layout requirements */
+        .all-skills .main-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .all-skills h3{
+            font-weight: bold;
+        }
+        .all-skills .left-div {
+            /* Adjust width, height, etc., for the image container */
+        }
+
+        .all-skills .right-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Adjust width, height, etc., for the information container */
+        }
+
+        .all-skills .top-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+
+        .all-skills .column {
+            width: 240px; /* Adjust the width of each column */
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            text-align: center;
+        }
+        .all-skills .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .all-skills .image-container img {
+            max-width: 100%; /* Ensure images remain responsive */
+            height:40px;
+            width: 40px;
+            margin: 10px; /* Adjust margins between images */
+        }
+
+
+
+
+
+
+
+        
+        /*footer*/
+        /* General Styles */
+
+        .footer .container {
+        width: 80%;
+        margin: 0 auto;
+        }
+
+        /* Contact Footer Styles */
+        .footer .contact-footer {
+        background-color: #000000;
+        color: #fff;
+        padding: 50px 0;
+        }
+
+        .social-links {
+        flex: 1;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        }
+
+        .social-icon {
+        margin: 0 10px;
+        
+        }
+        .footer .social-icon img{
+            height: 60px;
+            width: 60px;
+        }
+        
+        .footer .social-icon img:hover{
+            box-shadow: 0 0 2px #0d6efd, 0 0 2px #ffffff, 0 0 2px #0d6efd;
+        }
+
+        .mubtn:hover{
+            box-shadow: 0 0 2px #f6f6f6, 0 0 2px #ffffff, 0 0 2px #f5f5f6;
+            animation: shake 1s;
+        }
+
+        .contact-form {
+        flex: 1;
+        text-align: center;
+        }
+
+        .contact-form h3 {
+        margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea:active{
+            border-color: #0d6efd;
+        }
+
+        textarea {
+        height: 100px;
+        }
+
+        button {
+        background-color: #fff;
+        color: #000000;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        }
+
+        button:hover {
+        background-color: #ddd;
+        }
+
+        
+        /*section_6*/
+        .timeline-item {
+            display: flex;
+            flex-direction: row; /* Ensure items are arranged horizontally */
+            padding: 20px;
+            border-left: 2px solid #0d6efd;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .school-logo {
+            max-width: 100px; /* Adjust the maximum width of the logo */
+        }
+
+        .educational-details{
+            margin-top: 10px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 900px; /* Set the maximum width for the timeline */
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-left: 2px solid #0d6efd; /* Set the color for the timeline line */
+            margin-bottom: 40px; /* Set the spacing between timeline items */
+            position: relative;
+            height: 400px;
+        }
+
+        .timeline-content {
+            background-color: #f4f4f4; /* Set the background color for the content area */
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -5px; /* Adjust the position of the timeline line */
+            width: 10px;
+            height: 10px;
+            background-color: #0d6efd; /* Set the color for the timeline points */
+            border-radius: 50%;
+        }
+
+        
+
+
+
+    </style>
+    <body>
+        <section>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="menu-icon" id="menuBtn"><img src="icons8-menu-50.png" alt="menu" width="30px" height="30px"><span style="color: #002f75; padding-left: 10px; font-weight: bold;">Menu</span></button>
+                    </div>
+                    <div id="menuOverlay" class="overlay">
+                        <div class="overlay-content">
+                            <!-- Your menu items go here -->
+                            <a href="#"><h1 class="display-6">Home</h1></a>
+                            <a href="#"><h1 class="display-6">About</h1></a>
+                            <a href="#"><h1 class="display-6">Projects</h1></a>
+                            <a href="#"><h1 class="display-6">Skills</h1></a>
+                            <a href="#"><h1 class="display-6">Achievements</h1></a>
+                            <a href="#"><h1 class="display-6">Education</h1></a>
+                            <a href="#"><h1 class="display-6">Contact</h1></a>
+    
+                            <div class="social-icons">
+                                <a href="#"><img src="icons8-facebook-100.png" width="50px" height="50px"/></a>
+                                <a href="#"><img src="icons8-github-100.png" width="50px" height="50px"/></a>
+                                <a href="#"><img src="icons8-linkedin-100.png" width="50px" height="50px"/></a>
+                            </div>
+    
+                            <button id="scrollToTop">^</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+       <!-- <section class="section_1">
+            <div class="container align-items-center" >
+                <div class="row align-items-center" >
+                    <div id="left" class="col-md-6" >
+                        <div style="">
+                            <h1 class="display-1" style="font-weight: bold;">I'm <span style="color: #0d6efd;">A</span>kila <span style="color: #0d6efd;">W</span>anninayake!</h1>
+                        </div>
+                        <div id="B" >
+                            <div id="typewriter"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="right">
+                        <img  class="img-fluid" src="profile.png" alt="profile" width="auto" height="700px">
+                    </div>
+                    
+                </div>
+                <div class=" button">
+                    <Button onclick="downloadCV()">Download my CV</Button>
+                </div>
+            </div>
+        </section> -->
+        <section class="section_1">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-md-1">
+                        <div>
+                            <h1 class="display-1" style="font-weight: bold;">I'm <span style="color: #0d6efd;">A</span>kila <span style="color: #0d6efd;">W</span>anninayake!</h1>
+                        </div>
+                        <div id="B">
+                            <div id="typewriter"></div>
+                        </div>
+                        <div id="B">
+                            <center><div id="typewriters"></div></center>
+                            <div class="button">
+                            <button onclick="downloadCV()">Download my CV</button>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6 order-md-2">
+                        <img class="img-fluid" src="profile.png" alt="profile">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="section_2" style="background-color: #ffffff;">
+            <div>
+                <div>
+                    <div class="container" style="padding-bottom: 40px;">
+                        <div>
+                            <center><div class="topText">
+                                <h1 >Know me more</h1>
+                            </div>
+                            <div class="line_container">
+                                <h1 class="display-5" style="">About Me</h1>
+                                <hr class="line" />
+                            </div></center>
+                            
+                        </div>
+                        <div class="container align-items-center" style="background-color: #ffffff;">
+                            <div class="row align-items-center">
+                                <div id="left_content" class="col" style="background-color: #ffffff">
+                                    <div>
+                                        <p style="font-size: xx-large;">Hi I'm <span id="nameStyle">Akila Wannnayake</span></p>
+                                    </div>
+                                    <div>
+                                        <p style="font-size: 130%;" class="text-left">
+                                            <b>"</b>I am an undergraduate at the Open University of Sri Lanka and I am initiative-taking and determined individual who values teamwork, work hard, and am known for my leadership abilities. I have a genuine interest in technology and enjoy staying updated with the latest advancements. I also have an eye for aesthetics, which I bring to my work in software engineering. I am committed in learning and growing in this field.<b>"</b>
+                                        </p>
+                                    </div>
+                                    <div class="container text-left" style="font-size: 20px;">
+                                        <ul>
+                                            <li>
+                                                <div class="row" >
+                                                    <div class="col">
+                                                        <div><p>Microsoft Learn Student Ambassador Profile: <a style="text-decoration: none;" href="https://mvp.microsoft.com/en-US/studentambassadors/profile/25d41105-89ab-4e00-b509-0666c467e8c8" target="_blank">https://microsoft/studentambassadors/akila</a></p></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div><p>Email: <a style="text-decoration: none;" href="mailto:atwemp@gmail.com" target="_blank">atwousl@gmail.com</a></p></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div><p>Date of Birth: 18/06/2000</p></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div><p>Residance: Mahailluppallama, Anuradhapura</p></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                      <!--  <img id="img" src="aboutMe.gif" alt="about" style="max-width: 100%;"> -->
+                                        <video autoplay loop muted style="max-width: 100%;  height: 650px;">
+                                            <source src="aboutMe.mp4" type="video/mp4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section_3" style="background-color: #ebf2fb; padding-bottom: 40px;">
+            <div id="back">
+                <div >
+                    <div>
+                        <div class="line_container">
+                            <center><div class="topText">
+                                <h1>Some of my involments</h1>
+                            </div>
+                            <div>
+                                <h1 class="display-5" style="">Projects</h1>
+                                <hr class="line" />
+                            </div></center>
+                            <center>
+                                <p id="project-description">"I enjoy using digital tools to solve everyday problems. I love finding smart, creative solutions that make life easier. I pay attention to the details and use my imagination to tackle challenges in new ways. I'm always learning and exploring, eager to find better ways to solve problems using
+                                     technology."</p>
+                            </center>
+                        </div>
+                    </div>
+                    <div  class="projects">
+                        <div class="container">
+                            <div class="row">
+                                <div class="square">
+                                    <img src="java.png" alt="java" width="60px" height="60px">
+                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                        <span style="font-size: 40px;">Ruhiru</span><br>
+                                        <span>"An efficient and ease of use digital solution for blood donation 
+                                            to provide a convenient and accessible way for users to update the blood donation book and to find solutions for some other problems in a mobile-first way."</span>
+                                        <br><br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                        <br>
+                                        <span style="color: #002f75;">Andriod Studio, Java, Figma, Github</span>
+                                    </p>
+                                </div>
+                                <div class="square">
+                                    <img src="laravel.png" alt="java" width="60px" height="60px">
+                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                        <span style="font-size: 40px;">AthaHitha</span><br>
+                                        <span>"AthaHitha is a web solution which will web application becomes crucial as it makes a digital platform, and it addresses the issue faced by individuals and organizations who want to donate but find it difficult to allocate time for traditional donation methods.
+                                            "</span>
+                                        <br>
+                                        <br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                        <br>
+                                        <span style="color: #002f75;">HTML/CSS/Java Script, Laravel, SQL, ClickUp, Figma, Github</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="square">
+                                    <img src="react.png" alt="java" width="60px" height="60px">
+                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                        <span style="font-size: 40px;">Reader</span><br>
+                                        <span>"Reader is a native mobile application UI developed using React Native. Reader is an attempt to 
+                                            provide a digital library in a mobile first way.
+                                            "</span>
+                                        <br>
+                                        <br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                        <br>
+                                        <span style="color: #002f75;">React Native, Figma, Github</span>
+                                    </p>
+                                </div>
+                                <div class="square">
+                                    <img src="python.png" alt="java" width="60px" height="60px">
+                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                        <span style="font-size: 40px;">Enki</span><br>
+                                        <span>"Enki is a simple encyptor and decryptor pythn desktop GUI application has capability of encrypting user inputs
+                                            and to decrypt them back to the orginal message. Developed using Pythons' TkInter lirary.
+                                            "</span>
+                                        <br>
+                                        <br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                        <br>
+                                        <span style="color: #002f75;">Python, Figma, Github</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="section_4" style="background-color: #cdcdcd; padding-bottom: 40px;">
+            <div>
+                <div class="skills">
+                    <div>
+                        <div class="line_container">
+                            <center><div class="topText">
+                                <h1>What are my capabilities?</h1>
+                            </div>
+                            <div>
+                                <h1 class="display-5">My Skills</h1>
+                                <hr class="line" />
+                            </div></center>
+                            
+                        </div>
+                    </div>
+                    <div class="all-skills" >
+                        <div class="main-div">
+                            <div class="left-div">
+                                <!-- Image Goes Here -->
+                                <img src="skill.png" alt="Image" width="600px" height="450px"/>
+                            </div>
+                            <div class="right-div" style="font-family: Arial, Helvetica, sans-serif;">
+                                <div class="top-info">
+                                    <!-- Top Information -->
+                                    <div class="column">
+                                        <h3>Design</h3>
+                                        <p>Frontend Design</p>
+                                        <p>UI/UX Design</p>
+                                        <p>Web/Mobile Design</p>
+                                        <p>Database Design</p>
+                                        <p>Wireframing</p>
+                                    </div>
+                                    <div class="column">
+                                        <h3>Development</h3>
+                                        <p>Mobile App Development (Android)</p>
+                                        <p>Native Mobile UI Development</p>
+                                        <p>Web development</p>
+                                    </div>
+                                    <div class="column">
+                                        <h3>Management</h3>
+                                        <p>Project Management</p>
+                                        <p>Cloud</p>
+                                    </div>
+                                    <div class="column">
+                                        <h3>Soft Skills</h3>
+                                        <p>Team Work</p>
+                                        <p>Time Management</p>
+                                        <p>Adaptability</p>
+                                    </div>
+                                </div>
+                                <div class="bottom-info" style="padding-top: 20px;">
+                                    <!-- Bottom Information -->
+                                    <center><h2>Tools & Technologies</h2></center>
+                                    <div class="image-container">
+                                        <img src="python.png" alt="Image 1" />
+                                        <img src="java2.png" alt="Image 2" />
+                                        <img src="react.png" alt="Image 3" />
+                                        <img src="laravel.png" alt="Image 3" />
+                                        <img src="sql.png" alt="Image 3" />
+                                        <img src="html.png" alt="Image 3" />
+                                        <img src="css.png" alt="Image 3" />
+                                        <img src="js.png" alt="Image 3" />
+                                        <img src="xamp.png" alt="Image 3" />
+                                        <img src="azure.png" alt="Image 3" />
+                                        <img src="figma.png" alt="Image 3" />
+                                        <img src="github.png" alt="Image 3" />
+                                        <img src="vs.png" alt="Image 3" />
+                                        <img src="brain.png" alt="Image 3" />
+                                        <!-- Add more images as needed -->
+                                    </div>
+                                </div>
+                                <center>
+                                    <div class=" button">
+                                        <Button onclick="downloadCV()">Download my CV</Button>
+                                    </div>
+                                </center> 
+                            </div>
+                        </div>                                    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section_5" style="background-color: #ebf2fb; padding-bottom: 40px;">
+            <div>
+                <div>
+                    <div>
+                        <div class="line_container">
+                            <center><div class="topText">
+                                <h1>What made myself a value?</h1>
+                            </div>
+                            <div>
+                                <h1 class="display-5" style="">My Achievements</h1>
+                                <hr class="line" />
+                            </div></center>
+                            
+                        </div>
+                    </div>
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <div><p>Hi I'm </p></div>
+                                <div>
+                                    <p>
+                                        I am an undergraduate at the Open University of Sri Lanka and I am initiative-taking and determined individual who values teamwork, work hard, and am known for my leadership abilities. I have a genuine interest in technology and enjoy staying updated with the latest advancements. I also have an eye for aesthetics, which I bring to my work in software engineering. I am committed in learning and growing in this field.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section_6" style="background-color: #f3f3f3;">
+            <div>
+                <div>
+                    <div class="line_container">
+                        <div >
+                            <center><div class="topText">
+                                <h1>My Journey</h1>
+                            </div>
+                            <div>
+                                <h1 class="display-5" style="">Education</h1>
+                                <hr class="line" />
+                            </div></center>   
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="line_container">
+                            <!-- Your headings and line -->
+                            
+                        </div>
+                        <div class="container text-center">
+                            <div class="row gx-5 justify-content-center">
+                                <!-- Timeline items as flex containers -->
+                                <div class="col-sm-4">
+                                    <div class="timeline-item d-flex">
+                                        <!-- Your content -->
+                                        <div class="timeline-content">
+                                            <div class="timeline-dot"></div>
+                                            <div class="school-logo">
+                                                <img src="ganthiriyagama.jpg" alt="School Logo" width="90px" height="90px">
+                                            </div>
+                                            <div class="educational-details" style="text-align: left;">
+                                                <h5>2011 - 2016</h5>
+                                                <h3>G.C.E Ordinary Level</h3>
+                                                <h4>Ganthiriyagama Mahinda National School</h4>
+                                                <h6>English Medium</h6>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="timeline-item d-flex">
+                                        <!-- Your content -->
+                                        <div class="timeline-content">
+                                            <div class="school-logo">
+                                                <img src="central.jpg" alt="School Logo" width="90px" height="90px">
+                                            </div>
+                                            <div class="educational-details" style="text-align: left;">
+                                                <h5>2017 - 2019</h5>
+                                                <h3>G.C.E Advance Level</h3>
+                                                <h4>Central Collage Anuradhaurapura</h4>
+                                                <h6>Physical Stream - English Medium</h6>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="timeline-item d-flex">
+                                        <!-- Your content -->
+                                        <div class="timeline-content">
+                                            <div class="school-logo">
+                                                <img src="ousl.jpg" alt="School Logo" width="120px" height="120px">
+                                            </div>
+                                            <div class="educational-details" style="text-align: left;">
+                                                <h5>2021 - Present</h5>
+                                                <h3>Bachelor of Software Engineering</h3>
+                                                <h4>The Open University Sri Lanka</h4>
+                                                <h6>Currenly studying in 3rd year</h6>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <section style="background-color: #0d6efd;">
+            <div>
+                <div>
+                    <div>
+                        <h1 class="display-2"></h1>
+                    </div>
+                </div>   
+                    
+            </div>
+        </section>
+        <section class="footer">
+        <footer class="contact-footer">
+            <div class="container align-items-center">
+                <div class="footer-content">
+                    <div class="container">
+                        <div class="column">
+                            <div class="row">
+                                <center><h3> ⁌ Get In Touch ⁍ </h3></center>
+                            </div>
+                            <div class="row">
+                                <div class="social-links">
+                                    <a href="#" class="social-icon"><img src="icons8-linkedin-100.png" alt="LinkedIn"></a>
+                                    <a href="#" class="social-icon"><img src="icons8-facebook-100.png" alt="Twitter"></a>
+                                    <a href="#" class="social-icon"><img src="icons8-github-100.png" alt="GitHub"></a>
+                                    <!-- Add other social icons as needed -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="contact-form">
+                        <div class="container overflow-hidden text-center">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="p-3">
+                                        <button class="mubtn" onclick="sendEmail()" style="background-color: #0d6efd; width: 180px; height: 60px;
+                                        border-radius: 10px; color: #f1f1f1; font-size: larger;">✉ Email</button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3">
+                                        <button onclick="redirectToWhatsApp()" class="mubtn" style="background-color: greenyellow; width: 180px; height: 60px;
+                                        border-radius: 10px; color: #000000; font-size: larger;">✆ WhatsApp</button>
+                                    </div>
+                                    <script>
+                                        function sendEmail() {
+                                            window.open('atwemp@gmail.com');
+                                        }
+
+                                        function redirectToWhatsApp() {
+                                            var phoneNumber = '0769497933'; // Replace with your desired phone number
+                                            window.location.href = 'https://wa.me/' + phoneNumber;
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 40px;">
+                            <h3>Send me a quick message</h3>
+                            <form id="footer-form" action="#" method="POST">
+                                <input type="text" placeholder="Your Name" required>
+                                <input type="email" placeholder="Your Email" required>
+                                <textarea placeholder="Your Message" required></textarea>
+                                <button type="submit" style="border-radius: 10px;">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p style="text-align: center; color: #818181; margin-top: 20px;">ⓒ 2023 Akila Wanninayake | All rights reserved</p>
+                </div>
+            </div>
+            </footer>
+        </section>
+        <script>
+            function downloadCV() {
+              const pdfPath = 'akila.pdf';
+              const link = document.createElement('a');
+              link.href = pdfPath;
+              link.target = '_blank'; // Opens the link in a new tab
+              link.download = 'Akila_Wanninayake_CV.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }
+        </script>
+
+
+        <script>
+            // JavaScript to toggle the menu and scroll to top
+            document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+
+            menuBtn.addEventListener('click', function() {
+                menuOverlay.classList.toggle('open');
+                // Show scroll-to-top button when menu is opened
+                scrollToTopBtn.style.display = 'block';
+            });
+
+            // disappear when "Up" button is clicked and hide the button
+            scrollToTopBtn.addEventListener('click', function() {
+                menuOverlay.classList.remove('open');
+                scrollToTopBtn.style.display = 'none';
+            });
+            
+            
+            });
+
+            /*type wrting*/
+            const phrases = ["Undergraduate", "MLSA-Beta", "Tech Enthusiast"];
+            let i = 0;
+            const speed = 100; // Speed of typing in milliseconds
+            const typewriterElement = document.getElementById("typewriter");
+
+            function typeWriter() {
+            const currentPhrase = phrases[i];
+            let charIndex = 0;
+            const typeInterval = setInterval(() => {
+                if (charIndex < currentPhrase.length) {
+                typewriterElement.innerHTML += currentPhrase.charAt(charIndex);
+                charIndex++;
+                } else {
+                clearInterval(typeInterval);
+                setTimeout(eraseText, 100);
+                }
+            }, speed);
+
+            function eraseText() {
+                const eraseInterval = setInterval(() => {
+                if (typewriterElement.innerHTML.length > 0) {
+                    typewriterElement.innerHTML = typewriterElement.innerHTML.slice(0, -1);
+                } else {
+                    clearInterval(eraseInterval);
+                    i = (i + 1) % phrases.length; // Loop through phrases
+                    setTimeout(typeWriter, 1000); // Delay before starting typing next phrase
+                }
+                }, speed);
+            }
+            }
+
+            typeWriter(); // Start typing
+
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            
+            $(document).ready(function() {
+                $(window).on("scroll", function() {
+                    var section1 = $(".section_1");
+                    var nav = $(".navbar");
+                    var section1Top = section1.offset().top;
+                    var section1Bottom = section1Top + section1.outerHeight();
+                    var scrollTop = $(this).scrollTop();
+
+                    if (scrollTop >= section1Top && scrollTop < section1Bottom) {
+                        nav.removeClass("scrolled");
+                    } else {
+                        nav.addClass("scrolled");
+                    }
+                });
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</head>
+</html>
