@@ -1,3 +1,11 @@
+/*loading screen */
+document.addEventListener('DOMContentLoaded', function () {
+    // Hide loading screen when all content is loaded
+    window.addEventListener('load', function () {
+      document.getElementById('loading-screen').style.display = 'none';
+    });
+  });
+  
 /*scroll to top*/
 window.addEventListener('scroll', function() {
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
@@ -16,34 +24,31 @@ function scrollToTop() {
 }
 
 /*Animation */
-var spanText = function spanText(text) {
-    var string = text.innerText;
-    var spaned = '';
-    for (var i = 0; i < string.length; i++) {
-      if(string.substring(i, i + 1) === ' ') spaned += string.substring(i, i + 1);
-      else spaned += '<span>' + string.substring(i, i + 1) + '</span>';
-    }
-    text.innerHTML = spaned;
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
   }
   
-  var headline = document.querySelector("h1");
+  // Function to handle the scroll event
+  function fadeSectionsOnScroll() {
+    const sections = document.querySelectorAll('section');
   
-  spanText(headline);
+    sections.forEach((section) => {
+      if (isInViewport(section)) {
+        section.classList.add('fade-in');
+      }
+    });
+  }
   
-  let animations = document.querySelectorAll('.animation');
+  // Add scroll event listener to trigger fade-in effect
+  window.addEventListener('scroll', fadeSectionsOnScroll);
   
-  animations.forEach(animation => {
-    let letters = animation.querySelectorAll('span');
-    letters.forEach((letter, i) => {
-      letter.style.animationDelay = (i * 0.1) + 's';
-    })
-  })
+  // Initial check on page load
+  window.addEventListener('load', fadeSectionsOnScroll);
+  
 
 /*mlsa*/
-// Using GSAP for animation
-gsap.set('.txt1, .txt2', { opacity: 0 });
-
-gsap.timeline({ defaults: { duration: 1 } })
-  .from('.txt1', { opacity: 0, x: -50, ease: 'power2.inOut' })
-  .from('.txt2', { opacity: 0, x: 50, ease: 'power2.inOut' }, '-=0.5')
-  .from('.bar', { height: 0, ease: 'power2.inOut' }, '-=0.5');
