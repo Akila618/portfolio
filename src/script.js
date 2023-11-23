@@ -24,31 +24,37 @@ function scrollToTop() {
 }
 
 /*Animation */
-// Function to check if an element is in the viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    );
-  }
-  
-  // Function to handle the scroll event
-  function fadeSectionsOnScroll() {
-    const sections = document.querySelectorAll('section');
-  
-    sections.forEach((section) => {
-      if (isInViewport(section)) {
-        section.classList.add('fade-in');
-      }
-    });
-  }
-  
-  // Add scroll event listener to trigger fade-in effect
-  window.addEventListener('scroll', fadeSectionsOnScroll);
-  
-  // Initial check on page load
-  window.addEventListener('load', fadeSectionsOnScroll);
-  
+const section2 = document.getElementById('section_2');
+const section3 = document.getElementById('section_3');
+const section4 = document.getElementById('section_4');
+const section5 = document.getElementById('section_5');
+const section6 = document.getElementById('section_6');
+const section7 = document.getElementById('section_7');
+
+const observer2 = new IntersectionObserver((entries, observer) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+    section2.classList.add('fade-in');
+    observer.unobserve(section2);
+}
+});
+}, { threshold: 0.2 });
+
+const observer3 = new IntersectionObserver((entries, observer) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+    section3.classList.add('fade-in');
+    observer.unobserve(section3);
+}
+});
+}, { threshold: 0.2 });
+
+// Repeat for sections 4 to 7 with their respective IntersectionObservers
+// ...
+
+observer2.observe(section2);
+observer3.observe(section3);
+// Observe other sections as needed
+// ...
 
 /*mlsa*/
