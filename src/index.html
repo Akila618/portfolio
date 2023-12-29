@@ -10,6 +10,7 @@
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="educan.scss">
     <style>
        
         @media only screen and (max-width: 1000px) {
@@ -597,56 +598,7 @@
                 align-items: center;
             }
         }
-        .timeline-item {
-            display: flex;
-            flex-direction: row; /* Ensure items are arranged horizontally */
-            padding: 20px;
-            border-left: 2px solid #0d6efd;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .school-logo {
-            max-width: 100px; /* Adjust the maximum width of the logo */
-        }
-
-        .educational-details{
-            margin-top: 10px;
-        }
-        .timeline {
-            position: relative;
-            max-width: 900px; /* Set the maximum width for the timeline */
-            margin: 0 auto;
-            padding: 50px 0;
-        }
-
-        .timeline-item {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            border-left: 2px solid #0d6efd; /* Set the color for the timeline line */
-            margin-bottom: 40px; /* Set the spacing between timeline items */
-            position: relative;
-            height: 400px;
-            
-        }
-
-        .timeline-content {
-            background-color: #f4f4f4; /* Set the background color for the content area */
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        .timeline-item:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -5px; /* Adjust the position of the timeline line */
-            width: 10px;
-            height: 10px;
-            background-color: #0d6efd; /* Set the color for the timeline points */
-            border-radius: 50%;
-        }
+        
 
         /*mlsa*/
         .animate-charcter{
@@ -678,7 +630,39 @@
             }
             }
 
+            /*certificates*/
+
+            /*timeline*/
+            /* Default styling for larger screens (horizontal layout) */
+            .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            }
+
+            .timeline-item {
+            flex: 1;
+            padding: 20px;
+            border-bottom: 2px solid #ccc;
+            }
+
+            /* Media query for smaller screens (vertical layout) */
+            @media screen and (max-width: 768px) {
+            .timeline {
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                border-bottom: none;
+                border-left: 2px solid #ccc;
+                padding: 20px 0;
+                margin-left: 20px;
+            }
+            }
+
+
             
+
     </style>
     <body>
         <!-- <div id="loading-screen" class="loading-screen">
@@ -1020,194 +1004,40 @@ Besides my academic and professional interests, I enjoy reading, watching films,
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="container">
-                        <div class="row">
-                            <!-- Your square box section -->
-                            <div class="square-boxes">
-                                <!-- Include your square box divs here -->
-                                <div class="square">
-                                    <img src="mlsa.png" alt="java" width="100px" height="100px">
-                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
-                                        <span style="font-size: 20px;">Microsoft Learn Student Ambassador</span><br>
-                                        
-                                    </p>
-                                </div>
-                                <div class="square">
-                                    <img src="indian.png" alt="java" width="120px" height="100px">
-                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
-                                        <span style="font-size: 20px;">All Island Music cometition Wins</span>
-                                        <br><span style="font-weight: bold; font-size: 20px;">Indian Classical Music - Percussion<br></span>
-                                        
-                                    </p>
-                                </div>
-                                <div class="square">
-                                    <img src="udacity.png" alt="java" width="100px" height="100px">
-                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
-                                        <span style="font-size: 20px;">AWS nanodegree AI/ML scholorship nominee</span><br>
-                                        <span><span style="font-weight: bold; font-size: 20px;">Udacity Scholorships<br></span>
-                                        
-                                    </p>
-                                </div>
-                                <div class="square">
-                                    <img src="prefect.png" alt="java" width="120px" height="120px">
-                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
-                                        <span style="font-size: 20px;">Senior Prefect at School</span><br>
-                                    </p>
-                                </div>
-                                <div class="square">
-                                    <img src="trophy.png" alt="java" width="120px" height="120px">
-                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
-                                        <span style="font-size: 20px;">Sinhala & English Language Competition Wins</span><br>
-                                    </p>
-                                </div>
-                            </div>
-                    
-                            <!-- Your certificate box section -->
-                            <div class="certificate-boxes">
-                                <!-- Include your certificate box divs here -->
-                            </div>
-                        </div>
+                    <div class="achievements">
+                        
                     </div>
+                    
+                    <!--<div class="container">
+                        <div class="void" id="void">
+                            <div class="crop">
+                                
+                            <ul id="card-list" style="--count: 6;">
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                        <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                            </ul>
+                            <div class="last-circle"></div>
+                            <div class="second-circle"></div>
+                            </div>
+                            <div class="mask"></div>
+                            <div class="center-circle"></div>
+                        <div>
+                            
+                            <div class="certificate-boxes">
+                                
+                            </div>
+                        </div> -->
+                    </div>
+                    
                     
                     <div class="achievements-section">
                         <h2 style="font-family:  Arial, Helvetica, sans-serif;">Courses & Certificates</h2>
-                        <div style="background-image: linear-gradient(to bottom right, #ffffff, ffffff);">
-                            <div style="background-image: linear-gradient(to bottom right, #ffffff, #ffffff);">
-                                <div class="wrapper reveal">
-                                    <i id="left" class="fa-solid fa-angle-left"></i>
-                                    <ul class="carousel">
-                                        <li class="card">
-                                            <div class="card-n">
-                                                <img src="AI.png" class="card-img-top" alt="..." height="340px">
-                                                <div class="card-body" style="background-color:#ccdcf6; border:none; text-align:center;">
-                                                    <h5 class="card-title" style="color: rgb(17, 17, 17); text-align:center;">Introduction to AI</h5>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="card">
-                                            <div class="card-n">
-                                                <img src="mora.jpg" class="card-img-top" alt="..." height="340px">
-                                                <div class="card-body" style="background-color:#ccdcf6; border:none; text-align:center;">
-                                                    <h5 class="card-title" style="color: rgb(0, 0, 0); text-align:center;">Introduction to Python - UOM</h5>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="card">
-                                            <div class="card-n">
-                                                <img src="hackjava.png" class="card-img-top" alt="..." height="340px">
-                                                <div class="card-body" style="background-color:#ccdcf6; border:none; text-align:center;">
-                                                    <h5 class="card-title" style="color: rgb(0, 0, 0); text-align:center;">Java Basic - Hacker Rank</h5>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="card">
-                                            <div class="card-n">
-                                                <img src="hacksql.png" class="card-img-top" alt="..." height="340px">
-                                                <div class="card-body" style="background-color:#ccdcf6; border:none; text-align:center;">
-                                                    <h5 class="card-title" style="color: rgb(0, 0, 0); text-align:center;">SQL Basic - Hacker Rank</h5>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="card">
-                                            <div class="card-n">
-                                                <img src="Coursera computer technology.jpg" class="card-img-top" alt="...">
-                                                <div class="card-body" style="background-color:#ccdcf6; border:none; text-align:center;">
-                                                    <h5 class="card-title" style="color: rgb(0, 0, 0); text-align:center;">Computer Technology</h5>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <i id="right" class="fa-solid fa-angle-right">></i>
-                                </div>
-                                <script>
-                                    const wrapper = document.querySelector(".wrapper");
-                                    const carousel = document.querySelector(".carousel");
-                                    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-                                    const arrowBtns = document.querySelectorAll(".wrapper i");
-                                    const carouselChildrens = [...carousel.children];
-                        
-                                    let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
-                        
-                                    // Get the number of cards that can fit in the carousel at once
-                                    let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-                        
-                                    // Insert copies of the last few cards to beginning of carousel for infinite scrolling
-                                    carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-                                        carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-                                    });
-                        
-                                    // Insert copies of the first few cards to end of carousel for infinite scrolling
-                                    carouselChildrens.slice(0, cardPerView).forEach(card => {
-                                        carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-                                    });
-                        
-                                    // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
-                                    carousel.classList.add("no-transition");
-                                    carousel.scrollLeft = carousel.offsetWidth;
-                                    carousel.classList.remove("no-transition");
-                        
-                                    // Add event listeners for the arrow buttons to scroll the carousel left and right
-                                    arrowBtns.forEach(btn => {
-                                        btn.addEventListener("click", () => {
-                                            carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
-                                        });
-                                    });
-                        
-                                    const dragStart = (e) => {
-                                        isDragging = true;
-                                        carousel.classList.add("dragging");
-                                        // Records the initial cursor and scroll position of the carousel
-                                        startX = e.pageX;
-                                        startScrollLeft = carousel.scrollLeft;
-                                    }
-                        
-                                    const dragging = (e) => {
-                                        if(!isDragging) return; // if isDragging is false return from here
-                                        // Updates the scroll position of the carousel based on the cursor movement
-                                        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-                                    }
-                        
-                                    const dragStop = () => {
-                                        isDragging = false;
-                                        carousel.classList.remove("dragging");
-                                    }
-                        
-                                    const infiniteScroll = () => {
-                                        // If the carousel is at the beginning, scroll to the end
-                                        if(carousel.scrollLeft === 0) {
-                                            carousel.classList.add("no-transition");
-                                            carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-                                            carousel.classList.remove("no-transition");
-                                        }
-                                        // If the carousel is at the end, scroll to the beginning
-                                        else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
-                                            carousel.classList.add("no-transition");
-                                            carousel.scrollLeft = carousel.offsetWidth;
-                                            carousel.classList.remove("no-transition");
-                                        }
-                        
-                                        // Clear existing timeout & start autoplay if mouse is not hovering over carousel
-                                        clearTimeout(timeoutId);
-                                        if(!wrapper.matches(":hover")) autoPlay();
-                                    }
-                        
-                                    const autoPlay = () => {
-                                        if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
-                                        // Autoplay the carousel after every 2500 ms
-                                        timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
-                                    }
-                                    autoPlay();
-                        
-                                    carousel.addEventListener("mousedown", dragStart);
-                                    carousel.addEventListener("mousemove", dragging);
-                                    document.addEventListener("mouseup", dragStop);
-                                    carousel.addEventListener("scroll", infiniteScroll);
-                                    wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-                                    wrapper.addEventListener("mouseleave", autoPlay);
-                                </script>
-                                
-                            </div>
+                        <div class="cont" style="background-image: linear-gradient(to bottom right, #ffffff, ffffff);">
+                            
                         </div>
                     </div>
                     
@@ -1228,68 +1058,71 @@ Besides my academic and professional interests, I enjoy reading, watching films,
                             </div></center>   
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="line_container">
-                            <!-- Your headings and line -->
-                            
-                        </div>
-                        <div class="container text-center">
-                            <div id="education-class" class="row gx-5 justify-content-center" >
-                                <!-- Timeline items as flex containers -->
-                                <div class="col-sm-4">
-                                    <div class="timeline-item d-flex">
-                                        <!-- Your content -->
-                                        <div class="timeline-content">
-                                            <div class="timeline-dot"></div>
-                                            <div class="school-logo">
-                                                <img src="ganthiriyagama.jpg" alt="School Logo" width="90px" height="90px">
-                                            </div>
-                                            <div class="educational-details" style="text-align: left;">
-                                                <h5>2011 - 2016</h5>
-                                                <h3>G.C.E Ordinary Level</h3>
-                                                <h4>Ganthiriyagama Mahinda National School</h4>
-                                                <h6>English Medium</h6>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
+                    <div class="timeline">
+
+                        <!--first-->
+                        <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+                            <div class="timeline__event__icon ">
+                                <!-- <i class="lni-sport"></i>-->
+                    
+                            </div>
+                            <div class="timeline__event__date">
+                                <img src="pngegg.png" alt="ousl" style="border-radius: 50%; width: auto; height: 150px;">
+                            </div>
+                            <div class="timeline__event__content ">
+                                <div class="timeline__event__title">
+                                    Bachelor of Software Engineering (Hons)
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="timeline-item d-flex">
-                                        <!-- Your content -->
-                                        <div class="timeline-content">
-                                            <div class="school-logo">
-                                                <img src="central.jpg" alt="School Logo" width="90px" height="90px">
-                                            </div>
-                                            <div class="educational-details" style="text-align: left;">
-                                                <h5>2017 - 2019</h5>
-                                                <h3>G.C.E Advance Level</h3>
-                                                <h4>Central Collage Anuradhaurapura</h4>
-                                                <h6>Physical Stream - English Medium</h6>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="timeline-item d-flex">
-                                        <!-- Your content -->
-                                        <div class="timeline-content">
-                                            <div class="school-logo">
-                                                <img src="ousl.jpg" alt="School Logo" width="120px" height="120px">
-                                            </div>
-                                            <div class="educational-details" style="text-align: left;">
-                                                <h5>2021 - Present</h5>
-                                                <h3>Bachelor of Software Engineering</h3>
-                                                <h4>The Open University Sri Lanka</h4>
-                                                <h6>Currenly studying in 3rd year</h6>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
+                                <div class="timeline__event__description">
+                                    <h3>The Open University Sri Lanka</h3>
+                                    <h6>2021 - Present</h6>
                                 </div>
                             </div>
                         </div>
+                    
+                        <!--second-->
+                    
+                        <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+                            <div class="timeline__event__icon">
+                                <!-- <i class="lni-sport"></i>-->
+                    
+                            </div>
+                            <div class="timeline__event__date">
+                                <img src="pngegg3.png" alt="ousl" style="border-radius: 50%; width: auto; height: 120px;">
+                            </div>
+                            <div class="timeline__event__content">
+                                <div class="timeline__event__title">
+                                    G.C.E.Advanced Level (Physical Stream - EM)
+                                </div>
+                                <div class="timeline__event__description">
+                                    <h3>Central Collage Anuradhapura</h3>
+                                    <h6>2017 - 2020</h6>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!--third-->
+                    
+                        <div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+                            <div class="timeline__event__icon">
+                                <!-- <i class="lni-sport"></i>-->
+                    
+                            </div>
+                            <div class="timeline__event__date">
+                                <img src="pngegg2.png" alt="ousl" style="width: auto; height: 120px;">
+                            </div>
+                            <div class="timeline__event__content">
+                                <div class="timeline__event__title">
+                                    G.C.E.Ordinary Level (EM)
+                                </div>
+                                <div class="timeline__event__description">
+                                    <h3>Ganthiriyagama National School</h3>
+                                    <h6>2006 - 2016</h6>
+                                </div>
+                    
+                            </div>
+                        </div>
+                        
                     </div>
             </div>
         </section>
