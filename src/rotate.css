@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Permanent+Marker&family=Tilt+Neon&display=swap");
 /*loading screen*/
 /* Loading screen styles */
 .loading-screen {
@@ -451,161 +452,222 @@ li:nth-child(8), li:nth-child(8) .card {
 }
 
 /*skills*/
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
 
-.achievements * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .achievements{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden; 
-    background: #22222A;
-    font-family: 'Fira Mono', monospace;
-    -webkit-font-smoothing: antialiased;
-    font-size: .88rem;
-    color: #bdbdd5;
-  }
-  
-  .content-width {
-    width: 86%;
-    height: 100vh;
-    margin: 0 auto;
-  }
-  
-  .slideshow {
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  
-  .slideshow-items {
-    position: relative;
-    width: 100%;
-    height: 300px;
-  }
-  
-  .item {
+#container {
+    position: absolute;
+    margin: auto;
+    width: 100vw;
+    height: 80pt;
+    top: 0;
+    bottom: 0;
+
+    filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
     position: absolute;
     width: 100%;
-    height: auto;
-  }
-  
-  .item-image-container {
-    position: relative;
-    left: 25vw;
-    width: 42%;
-  }
-  
-  .item-image-container::before {
-    content: '';
+    display: inline-block;
+
+    font-family: "Raleway", sans-serif;
+    font-size: 80pt;
+
+    text-align: center;
+    color: #99beff;
+    user-select: none;
+}
+/* Your existing CSS styles */
+
+/*#container {
     position: absolute;
-    top: -1px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
     left: 0;
-    width: 101%;
-    height: 101%;
-    background: #22222A;
-    opacity: 0;
-    z-index: 1;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; 
+}
+
+#text1,
+#text2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 80pt;
+    color: #99beff;
+    user-select: none;
+}
+*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Permanent+Marker&family=Tilt+Neon&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+section .outer,
+section .inner {
+  width: 100%;
+  height: 100%;
   
-  .item-image {
-    position: relative;
-    width: 80%;
-    height: auto;
+}
+
+.section_1 .bg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+/* HOME */
+
+#section_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(72, 182, 153);
+  background-image: linear-gradient(
+    90deg,
+    #a2ccff 10%,
+    rgba(203, 217, 252, 0.8) 48%,
+    rgba(243, 243, 255, 0.8) 98%
+  );
+}
+
+/* HOME - LINKS */
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.links li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.links li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #70a9ff;
+  border-radius: 50%;
+  padding: 15px;
+  color: #fff;
+  transition: background-color 0.2s linear;
+}
+
+.links li a .icon {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.links li a:hover {
+  background-color: #2313ff;
+}
+
+.links li a:hover .icon {
+  animation: slide-icon 1s linear 1;
+}
+
+@keyframes slide-icon {
+  49% {
+    transform: translateX(-18px);
     opacity: 0;
-    display: block;
-    /* transition: property name | duration | timing-function | delay  */
-    transition: opacity .3s ease-out .45s;
   }
-  
-  .item.active .item-image {
+  50% {
+    transform: translateX(18px);
+  }
+  80% {
+    transform: translateX(0);
     opacity: 1;
   }
-  
-  .item.active .item-image-container::before {
-    opacity: .8;
+}
+
+.mouse-move {
+  position: absolute;
+  max-width: 70px;
+  bottom: 25px;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  animation: mouse-move 1.5s linear infinite;
+}
+
+@keyframes mouse-move {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
   }
-  
-  .item-description {
-    position: absolute;
-    top: 182px;
-    right: 0;
-    width: 50%;
-    padding-right: 4%;
-    line-height: 1.8;
+
+  12.5%,
+  37.5% {
+    transform: translateY(3px);
   }
-  
-  /* Staggered Vertical Items ------------------------------------------------------*/
-  .item-header {
-    position: absolute;
+
+  25% {
+    transform: translateY(8px);
+  }
+}
+/*my styles*/
+.display-1 {
+  font-weight: bold; 
+  font-size: 90px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+@media only screen and (max-width: 1500px) {
+  .display-1{
+    font-size: 50px;
     text-align: center;
-    left: 3vw;
-    top: 150px;
-    z-index: 100;
   }
-  
-  .item-header .vertical-part {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    -webkit-font-smoothing: auto;
-    font-size: 3.5vw;
+
+  *{
+    text-align: center;
+  }
+}
+
+/*mlsa*/
+.animate-charcter{
+
+    text-transform: uppercase;
+    background-image: linear-gradient(
+        -225deg,
+        #231557 0%,
+        #101c7a 29%,
+        #2313ff 67%,
+        #00e5ff 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
     color: #fff;
-  }
-  
-  .vertical-part {
-    overflow: hidden;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 5s linear infinite;
     display: inline-block;
-    justify-content: center;
-  }
-  
-  .vertical-part b {
-    display: inline-block;
-    transform: translateY(100%);
-  }
-  
-  .item-header .vertical-part b {
-    transition: .5s;
-  }
-  
-  .item-description .vertical-part b {
-    transition: .21s;
-  }
-  
-  .item.active .item-header .vertical-part b {
-    transform: translateY(0);
-  }
-  
-  .item.active .item-description .vertical-part b {
-    transform: translateY(0);
-  }
-  
-  /* Controls ----------------------------------------------------------------------*/
-  .controls {
-    position: relative;
-    text-align: right;
-    z-index: 1000;
-  }
-  
-  .controls ul {
-    list-style: none;
-  }
-  
-  .controls ul li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 3px;
-    background:#bdbdd5;;
-    cursor: pointer;
-  }
-  
-  .controls ul li.active {
-    background:#6a6a77;;
-  }
+        font-size: 3vw;
+    }
+
+    @keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+    }
 
