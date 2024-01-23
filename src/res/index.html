@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akila Wanninayake | Troodon</title>
+  <ink rel="shortcut icon" href="troodon.png" type="image/x-icon"></ink>
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+  <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<style>
+  @media (max-width: 768px) {
+    .myDiv .header{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+    }
+  }
+</style>
+
+<body>
+
+  <div class="loader"></div>
+  <div id="myDiv">
+    <!--HEADER-->
+    <section>
+      <header id="main-header">
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <a class="" href="">
+                <img src="troodon.png" alt="troodon" width="120px" height="70px">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#main-header">Home</a></li>
+                <li class=""><a href="#feature">About</a></li>
+                <li class=""><a href="#service">Skills</a></li>
+                <li class=""><a href="#portfolio">Achievements</a></li>
+                <li class=""><a href="#projects">Projects</a></li>
+                <li class=""><a href="#edu">Education</a></li>
+                <li class=""><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </section>
+    <div class="header">
+      <div class="bg-color">
+        
+        <div class="wrapper" style="background-size: cover;">
+          <div class="container" >
+              <div class="row" style="margin-bottom: 8vw;">
+                  <div class="" style="margin-right: auto">
+                      <div class="banner-info text-center wow fadeIn delay-05s">
+                          <h1 class="bnr-title" ><span style="font-size: 5vw;">I'm </span><span style="font-size: 13vw;"><span style="color: #0d6efd;">A</span>kila</span></h1>
+                          <h2 class="bnr-sub-title" span style="font-size: 50px">Wanninayake</h2>
+                          
+                          <h4 class="quote" style="font-family: cursive; color: #ebfaff; font-size: 20px;">
+                            "Passionate coder, perpetual learner, and rhythm seeker. Bridging tech and art for a harmonious journey."
+                          </h4>
+                          <hr>
+                          <!-- Social Media Links -->
+                          <div class="social-links">
+                            <a href="https://www.facebook.com/akila.wanninayake.5?mibextid=ZbWKwL" class="social-link" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="social-link" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/akila-wanninayake-4340b0217/" class="social-link" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://github.com/Akila618" class="social-link" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
+                            
+                            <!-- Add more social media links as needed -->
+                            <center>
+                              <div class="button">
+                                  <Button onclick="downloadCV()">Download my CV</Button>
+                              </div>
+                            </center> 
+                        </div>
+                          
+                          <script>
+                            function downloadCV() {
+                              const pdfPath = 'Akila_Wanninayake_CV.pdf';
+                              const link = document.createElement('a');
+                              link.href = pdfPath;
+                              link.target = '_blank'; // Opens the link in a new tab
+                              link.download = 'Akila_Wanninayake_CV.pdf';
+                              document.body.appendChild(link);
+                              link.click();
+                              document.body.removeChild(link);
+                            }
+                        </script>
+                          
+                          <div class="overlay-detail">
+                              <a href="#feature"><i class="fa fa-angle-down"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      
+      </div>
+    </div>
+    <!--/ HEADER-->
+    <!---->
+    <section id="feature" class="section-padding wow fadeIn delay-05s" style="margin-bottom: 0;">
+      <div class="container">
+        <div>
+          <center><div class="topText">
+              <h1 >Know me more</h1>
+          </div>
+          <div class="line_container">
+              <h1 class="display-5" style="">About Me</h1>
+              <hr class="line" />
+          </div></center>
+          
+        </div>
+        <div class="row">
+          <div class="myself">
+            <center>
+              <div class="">
+                <img src="Picture1.png" alt="" style="width: auto; height: 60vh;">
+              </div>
+            </center>
+            <p>
+                <b>"</b>I am an undergraduate at the Open University of Sri Lanka and I am initiative-taking and determined individual who values teamwork, work hard, and am known for my leadership abilities. I have a genuine interest in technology and enjoy staying updated with the latest advancements. I also have an eye for aesthetics, which I bring to my work in software engineering. I am committed in learning and growing in this field.<b>"</b>
+            </p>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="mlsa.png" style="width: 110px; height: 100px;">
+              </div>
+              <h3 class="pad-bt15">Microsoft Learn Student Ambassador</h3>
+              
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="postman.png" style="width: 100px; height: 100px;">
+              </div>
+              <h3 class="pad-bt15">Postman API Student Expert</h3>
+              
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="sc.jpeg" style="width: 100px; height: 100px;">
+              </div>
+              <h3 class="pad-bt15">AWS AI/ML Acholorship Nominee</h3>
+              
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="coder.jpg" style="width: 100px; height: 100px;">
+              </div>
+              <h3 class="pad-bt15">Tech Enthusisat</h3>
+               
+            </div>
+          </div>
+          
+        </div>
+        <div class="container text-center" style="font-size: 20px; margin-top: 10px;">
+          <ul>
+              <li>
+                  <div class="row" >
+                      <div class="col">
+                          <div><p>Microsoft Learn Student Ambassador Profile: <a style="text-decoration: none;" href="https://mvp.microsoft.com/en-US/studentambassadors/profile/25d41105-89ab-4e00-b509-0666c467e8c8" target="_blank">https://microsoft/studentambassadors/akila</a></p></div>
+                      </div>
+                  </div>
+              </li>
+              <li>
+                  <div class="row">
+                      <div class="col">
+                          <div><p>Email: <a style="text-decoration: none;" href="mailto:atwemp@gmail.com" target="_blank">atwousl@gmail.com</a></p></div>
+                      </div>
+                  </div>
+              </li>
+              <li>
+                  <div class="row">
+                      <div class="col">
+                          <div><p>LinkedIn: <a style="text-decoration: none;" href="https://www.linkedin.com/in/akila-wanninayake-4340b0217/" target="_blank">https://www.linkedin.com/in/akila-wanninayake-4340b0217</a></p></div>
+                      </div>
+                  </div>
+              </li>
+              <li>
+                  <div class="row">
+                      <div class="col">
+                          <div><p>Date of Birth: 18/06/2000</p></div>
+                      </div>
+                  </div>
+              </li>
+              <li>
+                  <div class="row">
+                      <div class="col">
+                          <div><p>Residance: Mahailluppallama, Anuradhapura</p></div>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+      </div>
+    </section>
+    <!---->
+    <!---->
+    <section id="service" class="section-padding wow fadeInUp delay-05s" style="background-color: #e0e0e0; margin-top: 0;">
+      <div class="container" style="justify-content: center; text-align: center; align-items: center;">
+        <div class="line_container">
+            <center><div class="topText">
+                <h1>What I am capable of ?</h1>
+            </div>
+            <div>
+                <h1 class="display-5">My Skills</h1>
+                <hr class="line" />
+            </div></center>
+            
+        </div>
+        <center><img src="skill.png" alt="" style="width: auto; height: 60vh;"></center>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">How can I be involved in projects?</h2>
+            <hr>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <h3 style="color: #070707;"><span style="color: #070707;">D</span>esign</h3>
+              <div class="column" style="text-align:inherit; color: #070707;">
+                <p style="color: #000000; font-size: 20px;">Frontend Design</p>
+                <p style="color: #070707; font-size: 20px;">UI/UX Design</p>
+                <p style="color: #070707; font-size: 20px;">Web/Mobile Design</p>
+                <p style="color: #070707; font-size: 20px;">Database Design</p>
+                <p style="color: #070707; font-size: 20px;">Wireframing</p>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-item" style="color: #070707;">
+              <h3 style="color: #070707;"><span style="color: #070707;">D</span>evelopment</h3>
+              <div class="column">
+                <p style="color: #070707; font-size: 20px;">Mobile App Development (Android)</p>
+                <p style="color: #070707; font-size: 20px;">Native Mobile UI Development</p>
+                <p style="color: #070707; font-size: 20px;">Web development</p>
+            </div>
+              
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <h3 style="color: #070707; font-size: 25px;"><span style="color: #070707;">M</span>anagement</h3>
+              <div class="column">
+                <p style="color: #070707; font-size: 20px;">Project Management</p>
+                <p style="color: #070707; font-size: 20px;">Cloud (Azure)</p>
+            </div>
+              
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <h3 style="color: #070707;"><span style="color: #070707;">S</span>oft Skills</h3>
+              <div class="column">
+                <p style="color: #070707; font-size: 20px;">Team Work</p>
+                <p style="color: #070707; font-size: 20px;">Time Management</p>
+                <p style="color: #070707; font-size: 20px;">Adaptability</p>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+      
+      <div class="bottom-info" style="padding-top: 20px;">
+        <!-- Bottom Information -->
+        <center><h2>Tools & Technologies</h2></center>
+        <div class="image-container">
+            <img src="python.png" alt="Image 1" />
+            <img src="java2.png" alt="Image 2" />
+            <img src="react.png" alt="Image 3" />
+            <img src="laravel.png" alt="Image 3" />
+            <img src="sql.png" alt="Image 3" />
+            <img src="html.png" alt="Image 3" />
+            <img src="css.png" alt="Image 3" />
+            <img src="js.png" alt="Image 3" />
+            <img src="xamp.png" alt="Image 3" />
+            <img src="azure.png" alt="Image 3" />
+            <img src="figma.png" alt="Image 3" />
+            <img src="github.png" alt="Image 3" />
+            <img src="vs.png" alt="Image 3" />
+            <img src="brain.png" alt="Image 3" />
+            <!-- Add more images as needed -->
+        </div>
+
+        
+    </div>
+    <center>
+      <div class=" button">
+          <Button onclick="downloadCV()">Download my CV</Button>
+      </div>
+  </center> 
+    </section>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <section id="portfolio" class="wow fadeInUp delay-05s">
+      <div >
+        <div class="line_container" style="margin-top: 10px;">
+            <center><div class="topText">
+                <h1 >What made myself a value?</h1>
+            </div>
+            <div>
+                <h1 class="display-5" style="margin-top: 10px; color: #818181;">My Achievements</h1>
+                <hr class="line" />
+            </div></center>
+        </div>
+        <div style="margin-left: 3vw; margin-right: 3vw;">
+            <center><p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; margin-top: 20px; color: #a9b0bd;">
+                "I am actively involved in the tech community as a Student Ambassador at Microsoft Learn Student Ambassadors. In these roles, I facilitate learning sessions. I have also earned multiple certifications from EDUCBA and The Open University in topics such as JavaScript, Interpersonal Skills, and ICT Systems. 
+
+                Besides my academic and professional interests, I enjoy reading, watching films, and playing music. I have won provincial and all-island awards for my performance, and I am currently learning from a renowned master. I believe that music enhances my creativity and analytical skills, and enriches my cultural awareness."
+            </p></center>
+          </div>
+    </div>
+      <section id="section_3" class="section_3" style="background-color: #ebf2fb; padding-bottom: 40px;">
+        <center><div class="topText" >
+          <h1 style="margin-top: 20px;">My Experience</h1>
+      </div>
+      <div class="line_container" id="projects">
+          <h1 class="display-5" style="">Projects</h1>
+          <hr class="line" />
+      </div></center>
+        <div id="back">
+            <div >
+                <div  class="projects">
+                    <div class="container">
+                        <div class="row">
+                            <div class="square">
+                                <img src="java.png" alt="java" width="60px" height="60px">
+                                <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                    <span style="font-size: 40px;">Ruhiru</span><br>
+                                    <span>"An efficient and ease of use digital solution for blood donation 
+                                        to provide a convenient and accessible way for users to update the blood donation book and to find solutions for some other problems in a mobile-first way."</span>
+                                    <br><br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                    <br>
+                                    <span style="color: #002f75;">Andriod Studio, Java, Figma, Github</span>
+                                </p>
+                            </div>
+                            <div class="square">
+                                <img src="laravel.png" alt="java" width="60px" height="60px">
+                                <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                    <span style="font-size: 40px;">AthaHitha</span><br>
+                                    <span>"AthaHitha is a web solution which will web application becomes crucial as it makes a digital platform, and it addresses the issue faced by individuals and organizations who want to donate but find it difficult to allocate time for traditional donation methods.
+                                        "</span>
+                                    <br>
+                                    <br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                    <br>
+                                    <span style="color: #002f75;">HTML/CSS/Java Script, Laravel, SQL, ClickUp, Figma, Github</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="square">
+                                <img src="react.png" alt="java" width="60px" height="60px">
+                                <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                    <span style="font-size: 40px;">Reader</span><br>
+                                    <span>"Reader is a native mobile application UI developed using React Native. Reader is an attempt to 
+                                        provide a digital library in a mobile first way.
+                                        "</span>
+                                    <br>
+                                    <br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                    <br>
+                                    <span style="color: #002f75;">React Native, Figma, Github</span>
+                                </p>
+                            </div>
+                            <div class="square">
+                                <img src="python.png" alt="java" width="60px" height="60px">
+                                <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                    <span style="font-size: 40px;">Enki</span><br>
+                                    <span>"Enki is a simple encyptor and decryptor pythn desktop GUI application has capability of encrypting user inputs
+                                        and to decrypt them back to the orginal message. Developed using Pythons' TkInter lirary.
+                                        "</span>
+                                    <br>
+                                    <br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                    <br>
+                                    <span style="color: #002f75;">Python, Figma, Github</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    </section>
+    <!---->
+    <!---->
+    <section id="edu" class="wow fadeInUp delay-05s" style="background-image: url(ousl.png); background-size: cover; width: auto;">
+      <div class="bg-testicolor">
+        <div class="container section-padding">
+          <div class="row">
+            <div >
+              <center><div class="topText">
+                  <h1>My Journey</h1>
+              </div>
+              <div>
+                  <h1 class="display-5" style="">Education</h1>
+                  <hr class="line" />
+              </div></center>   
+          </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+    
+    <!---->
+    <section id="contact" class="section fadeInUp delay-05s">
+      <div class="">
+        <div class="">
+          <section class="footer">
+            <footer class="contact-footer">
+                <div class="container align-items-center">
+                    <div class="footer-content">
+                        <div class="container">
+                            <div class="column">
+                                <div class="row">
+                                    <center><h3> ⁌ Get In Touch ⁍ </h3></center>
+                                </div>
+                                <div class="row">
+                                    <div class="social-links">
+                                        <a href="#" class="social-icon"><img src="icons8-linkedin-100.png" alt="LinkedIn"></a>
+                                        <a href="#" class="social-icon"><img src="icons8-facebook-100.png" alt="Twitter"></a>
+                                        <a href="#" class="social-icon"><img src="icons8-github-100.png" alt="GitHub"></a>
+                                        <!-- Add other social icons as needed -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="contact-form">
+                            <div class="container overflow-hidden text-center">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="p-3">
+                                            <button class="mubtn" onclick="sendEmail()" style="background-color: #0d6efd; width: 180px; height: 60px;
+                                            border-radius: 10px; color: #f1f1f1; font-size: larger;">✉ Email</button>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="p-3">
+                                            <button onclick="redirectToWhatsApp()" class="mubtn" style="background-color: greenyellow; width: 180px; height: 60px;
+                                            border-radius: 10px; color: #000000; font-size: larger;">✆ WhatsApp</button>
+                                        </div>
+                                        <script>
+                                            function sendEmail() {
+                                                window.open('atwemp@gmail.com');
+                                            }
+    
+                                            function redirectToWhatsApp() {
+                                                var phoneNumber = '0769497933'; // Replace with your desired phone number
+                                                window.location.href = 'https://wa.me/' + phoneNumber;
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 40px;">
+                                <h3>Send me a quick message</h3>
+                                <form id="footer-form" action="#" method="POST">
+                                    <input type="text" placeholder="Your Name" required>
+                                    <input type="email" placeholder="Your Email" required>
+                                    <textarea placeholder="Your Message" required></textarea>
+                                    <button type="submit" style="border-radius: 10px;">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="text-align: center; color: #818181; margin-top: 20px;">ⓒ 2023 Akila Wanninayake | All rights reserved</p>
+                    </div>
+                </div>
+                </footer>
+            </section>
+          
+        </div>
+      </div>
+    </section>
+    <!---->
+    <!---->
+    <!---->
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/jquery.bxslider.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
