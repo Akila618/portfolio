@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <ink rel="shortcut icon" href="troodon.png" type="image/x-icon">
+    <title>Akila Wanninayake</title>
+    <!-- Add Bootstrap CSS CDN link -->
+    <link rel="stylesheet" href="rotate.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+    <script src="folio.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="educan.scss">
+    <style>
+       
+        @media only screen and (max-width: 1000px) {
+            #video-div{
+                    display: none;
+                    
+            }
+            .section_2{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                
+            }
+            .section_2 ul{
+                list-style-type: none;
+            }  
+        }
+        @media only screen and (min-width: 1000px){
+            .hidden-image{
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 1500px){
+            #top-btn{
+               position: relative;
+               left: 40px;
+               bottom: 100px;
+            }
+        }
+        @media only screen and (max-width: 1200px){
+            .section_1 .container .row{
+                transition: all 1s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+           
+        }
+
+        @media only screen and (max-width: 1500px){
+            #education-class{
+                padding-bottom: 15%;
+            }
+           
+        }
+        
+        #B{
+            padding-bottom: 50px;
+        }
+
+        /*undergraduate text*/
+        .undergrad .container {
+        font-size: 4vw; /* Relative font size */
+        font-family: 'Red Hat Display', sans-serif;
+        letter-spacing: 1.5px;
+        width: 80%; /* Adjust width as needed */
+        max-width: 600px; /* Set maximum width */
+        height: auto; /* Allow height to adjust */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: auto; /* Center horizontally */
+        }
+
+        .undergrad .txt1,
+        .txt2 {
+        overflow: hidden;
+        }
+
+        .undergrad .bar {
+        width: 1vw; /* Relative width */
+        height: 100%;
+        background-color: #000; /* Set your desired color */
+        position: absolute;
+        top: 0;
+        left: calc(50% - 0.5vw); /* Relative positioning */
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            .undergrad .container {
+            font-size: 6vw; /* Adjust font size for smaller screens */
+        }
+        }
+
+        #scrollToTop {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 100px;
+            z-index: 999;
+            font-size: 18px;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #scrollToTop:hover{
+        box-shadow: 0 0 2px #fdfdfd, 0 0 2px #ffffff, 0 0 2px #ffffff;
+        }
+
+        
+
+        .line {
+            border: none;
+            width: 200px; /* Set the width according to your text width */
+            height: 5px;
+            background-color:#0d6efd;
+        }
+
+
+        .section_1 {
+        transition: all 1s ease-in-out;
+        }
+
+        /*nav bar fix*/
+            #menuBtn {
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
+            padding: 3px;
+            }
+
+            .navbar-header:hover {
+            box-shadow: 0 0 2px #0d6efd, 0 0 2px #0d6efd, 0 0 2px #fcfcfc;
+            }
+
+        /* Style for the menu overlay */
+        .overlay {
+            height: 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-y: hidden;
+            transition: 0.5s;
+            z-index: 999;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 10%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .overlay-content a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 34px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .overlay-content a:hover{
+            color: #f1f1f1;
+        }
+        .overlay-content .social-icons a:hover{
+            box-shadow: 0 0 2px #0d6efd, 0 0 2px #0d6efd, 0 0 2px #fcfcfc;
+        }
+
+        .overlay-content .social-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Show the menu overlay */
+        .open {
+            height: 100%;
+        }
+
+        .button{
+            margin-top: 5vh;
+        }
+
+        .button button{
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 15px 25px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button button:hover{
+            background-color: #e7edf7;
+            color: #000000;
+            box-shadow: 0 0 3px #0d6efd, 0 0 3px #221515, 0 0 3px #0d6efd;
+        }
+
+        .left .social-icons{
+            margin: none;
+        }
+        .navbar {
+        transition: background-color 0.5s ease;
+        }
+
+        .scrolled {
+        background-color: white;
+        }
+
+        /*Section 2*/
+        .topText h1{
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0d6efd;
+            border-radius: 5px;
+            color: white;
+
+        }
+
+        .topText {
+        padding-top: 30px;
+        width: fit-content;
+        justify-content: center; /* Horizontally center */
+        align-items: center; /* Vertically center */
+         /* Adjust this margin as needed */
+        }
+
+        .row .col #img{
+        width: 90%;
+        height: 90%;
+        }
+
+        .section_2{
+            background-color: #f8f8f8;
+        }
+
+        .parallel{
+            
+        }
+        .container .row .col #nameStyle{
+            font-weight: bold;
+            text-decoration: underline;
+            text-decoration-color: #0d6efd;
+        }
+
+    /*section_3*/
+        .section_3 .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        .section_3 .row {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 10px; /* Adjust padding as needed */
+        }
+
+        .section_3 .square {
+            display: flex;
+            padding-top: 10px;
+            flex-direction: column;
+            align-items: center;
+            width: 550px; /* Set width for each square */
+            height: 360px; /* Set height for each square */
+            margin: 5px; /* Set margin between squares */
+            background-color: white;
+            border-radius: 10px;
+            border-style: none;
+            border-width: 2px; /* Background color for squares */
+        }
+
+        .section_3 .square p {
+            text-align: center;
+            margin: 0;
+        }
+
+        #project-description{
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        /*#back{
+            background-image: url(back1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }*/
+
+        
+
+        /*section_4*/
+        .section_4{
+            background-color: #f8f8f8;
+        }
+        /* Adjust the styles according to your layout requirements */
+        .all-skills .main-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .all-skills h3{
+            font-weight: bold;
+        }
+        .all-skills .left-div {
+            /* Adjust width, height, etc., for the image container */
+        }
+
+        .all-skills .right-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Adjust width, height, etc., for the information container */
+        }
+
+        .all-skills .top-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+
+        .all-skills .column {
+            width: 240px; /* Adjust the width of each column */
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            text-align: center;
+        }
+        .all-skills .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .all-skills .image-container img {
+            max-width: 100%; /* Ensure images remain responsive */
+            height:40px;
+            width: 40px;
+            margin: 10px; /* Adjust margins between images */
+        }
+
+
+        /*section_5*/
+
+        .section_5 .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        }
+
+       
+
+        .section_5 .square {
+            display: flex;
+            padding-top: 10px;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+            width: 350px; /* Set width for each square */
+            height: 200px; /* Set height for each square */
+            margin: 5px; /* Set margin between squares */
+            
+            border-radius: 10px;
+            border-style: none;
+            border-width: 2px; /* Background color for squares */
+        }
+
+        .section_5 .square p {
+            text-align: center;
+            margin: 0;
+        }
+
+        #project-description{
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        /*#back{
+            background-image: url(back1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }*/
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+
+
+        .section_5 .achievements-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section_5 .achievements-div,
+        .certificates-div {
+            width: 100%;
+            margin: 2px;
+            text-align: center;
+        }
+
+        .section_5 .dynamic-boxes {
+            display: flex;
+            
+            justify-content: center;
+        }
+
+        .section_5 .square-box {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .section_5 .square-box img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+
+        .section_5 .certificates-div{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .section_5 .certificate-box {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .section_5 .certificate-box img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+
+        .section_5 .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section_5 .square-boxes,
+        .section_5 .certificate-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 10px;
+        }
+
+
+
+
+        
+        /*footer*/
+        /* General Styles */
+
+        .footer .container {
+        width: 80%;
+        margin: 0 auto;
+        }
+
+        /* Contact Footer Styles */
+        .footer .contact-footer {
+        background-color: #000000;
+        color: #fff;
+        padding: 50px 0;
+        }
+
+        .social-links {
+        flex: 1;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        }
+
+        .social-icon {
+        margin: 0 10px;
+        
+        }
+        .footer .social-icon img{
+            height: 60px;
+            width: 60px;
+        }
+        
+        .footer .social-icon img:hover{
+            box-shadow: 0 0 2px #0d6efd, 0 0 2px #ffffff, 0 0 2px #0d6efd;
+        }
+
+        .mubtn:hover{
+            box-shadow: 0 0 2px #f6f6f6, 0 0 2px #ffffff, 0 0 2px #f5f5f6;
+            animation: shake 1s;
+        }
+
+        .contact-form {
+        flex: 1;
+        text-align: center;
+        }
+
+        .contact-form h3 {
+        margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea:active{
+            border-color: #0d6efd;
+        }
+
+        textarea {
+        height: 100px;
+        }
+
+        button {
+        background-color: #fff;
+        color: #000000;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        }
+
+        button:hover {
+        background-color: #ddd;
+        }
+
+        
+        /*section_6*/
+        @media only screen and (max-width: 1200px) {
+            .timeline-item {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+
+        /*mlsa*/
+        .animate-charcter{
+
+            text-transform: uppercase;
+            background-image: linear-gradient(
+                -225deg,
+                #231557 0%,
+                #101c7a 29%,
+                #2313ff 67%,
+                #00e5ff 100%
+            );
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 3s linear infinite;
+            display: inline-block;
+                font-size: 3vw;
+            }
+
+            @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+            }
+
+            /*certificates*/
+
+            /*timeline*/
+            /* Default styling for larger screens (horizontal layout) */
+            .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            }
+
+            .timeline-item {
+            flex: 1;
+            padding: 20px;
+            border-bottom: 2px solid #ccc;
+            }
+
+            /* Media query for smaller screens (vertical layout) */
+            @media screen and (max-width: 768px) {
+            .timeline {
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                border-bottom: none;
+                border-left: 2px solid #ccc;
+                padding: 20px 0;
+                margin-left: 20px;
+            }
+            }
+
+
+            
+
+    </style>
+    <body>
+        <!-- <div id="loading-screen" class="loading-screen">
+            <div class="loader"></div>
+        </div> -->         
+        <header>
+            <section style="background-color: #ebf2fb;">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button class="menu-icon" id="menuBtn"><img src="menu2.png" alt="menu" width="30px" height="30px"><span style="color: #002f75; padding-left: 10px; font-weight: bold;">Menu</span></button>
+                        </div>
+                        <div id="menuOverlay" class="overlay">
+                            <div class="overlay-content">
+                                <!-- Your menu items go here -->
+                                <a href="#section_1"><h1 class="display-6">Home</h1></a>
+                                <a href="#section_2"><h1 class="display-6">About</h1></a>
+                                <a href="#section_3"><h1 class="display-6">Projects</h1></a>
+                                <a href="#section_4"><h1 class="display-6">Skills</h1></a>
+                                <a href="#section_5"><h1 class="display-6">Achievements</h1></a>
+                                <a href="#section_6"><h1 class="display-6">Education</h1></a>
+                                <a href="#section_7"><h1 class="display-6">Contact</h1></a>
+        
+                                <div class="social-icons">
+                                    <a href="#"><img src="icons8-facebook-100.png" width="50px" height="50px"/></a>
+                                    <a href="#"><img src="icons8-github-100.png" width="50px" height="50px"/></a>
+                                    <a href="#"><img src="icons8-linkedin-100.png" width="50px" height="50px"/></a>
+                                </div>
+        
+                                <button id="scrollToTop">^</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+        <script>
+            document.querySelector('.menu-icon').addEventListener('click', function() {
+            document.querySelectorAll('.bar').forEach(bar => bar.classList.toggle('change'));
+            });
+
+        </script>
+
+<section class="section_1">
+    <div class="outer">
+      <div class="inner">
+        <div class="bg home">
+          <!--<div class="scroll">
+            <p>Welcome to RetroBeats</p>
+            <p>A Nostalgic Journey</p>
+          </div>-->
+          <div class="pf-image">
+            <img src="profile.png" alt="profile" />
+          </div>
+          <div class="home-content">
+            <div>
+              <h1 class="display-1">I'm <span style="color: #0d6efd;">A</span>kila <span style="color: #0d6efd;">W</span>anninayake!</h1>
+            </div>
+            <div class="uncontainer">
+              <div class="row">
+                  <div class="col-md-12" style="margin-left: 0;">
+                      <h3 class="animate-charcter">UNDERGRADUATE|MLSA</h3>
+                  </div>
+              </div>
+          </div>
+            <p>
+              Welcome to RetroBeats, the ultimate destination for all things
+              80's music! We've
+              carefully collected the top unforgettable hits from this golden
+              era for a nostalgic journey. Join us to relive the magic of the
+              80's!
+            </p>
+            <ul class="links">
+              <li>
+                <a href="#"
+                  ><ion-icon class="icon" name="logo-linkedin"></ion-icon
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><ion-icon class="icon" name="logo-google"></ion-icon
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><ion-icon class="icon" name="logo-github"></ion-icon
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><ion-icon class="icon" name="logo-facebook"></ion-icon
+                ></a>
+              </li>
+            </ul>
+            <div  class="row align-items-center" id="B">
+              <center><div id="typewriters"></div></center>
+              <div class="button">
+              <button id="top-btn" onclick="downloadCV()">Download my CV</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img class="mouse-move" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/28313e5d-95f1-4e38-ac49-16b4cf006014" alt="" />
+  </section>
+    
+        <section id="section_1" class="section_1" style="background-color: #ebf2fb;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-md-1">
+                        <div>
+                            <h1 class="display-1" style="font-weight: bold;">I'm <span style="color: #0d6efd;">A</span>kila <span style="color: #0d6efd;">W</span>anninayake!</h1>
+                        </div> 
+                        <div class="uncontainer">
+                            <div class="row">
+                                <div class="col-md-12" style="margin-left: 10px;">
+                                    <h3 class="animate-charcter">UNDERGRADUATE|MLSA</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col order-md-2">
+                        <img class="img-fluid" src="profile.png" alt="profile">
+                    </div>
+                </div>
+                <ul class="links">
+                    <li>
+                      <a href="#"
+                        ><ion-icon class="icon" name="logo-linkedin"></ion-icon
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><ion-icon class="icon" name="logo-google"></ion-icon
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><ion-icon class="icon" name="logo-github"></ion-icon
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><ion-icon class="icon" name="logo-facebook"></ion-icon
+                      ></a>
+                    </li>
+                  </ul>
+                <div  class="row align-items-center" id="B">
+                    <center><div id="typewriters"></div></center>
+                    <div class="button">
+                    <button id="top-btn" onclick="downloadCV()">Download my CV</button>
+                </div>
+            </div>
+        </section>
+        <button id="scrollToTopBtn" onclick="scrollToTop()">&#8593;</button>
+        
+        
+        <section id="section_2" class="section_2" style="background-color: #ffffff;">
+            <div>
+                <div>
+                    <div class="container" style="padding-bottom: 40px;">
+                        <div>
+                            <center><div class="topText">
+                                <h1 >Know me more</h1>
+                            </div>
+                            <div class="line_container">
+                                <h1 class="display-5" style="">About Me</h1>
+                                <hr class="line" />
+                            </div></center>
+                            
+                        </div>
+                        <div class="hidden-image">
+                            <img src="coder.png" alt="coder" width="200px" height="auto">
+                        </div>
+                        <div class="container align-items-center" style="background-color: #ffffff;">
+                            <div class="row align-items-center">
+                                <div id="left_content" class="col" style="background-color: #ffffff">
+                                    <div>
+                                        <p style="font-size: xx-large;">Hi I'm <span id="nameStyle">Akila Wannnayake</span></p>
+                                    </div>
+                                    <div>
+                                        <p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px;" class="text-left">
+                                            <b>"</b>I am an undergraduate at the Open University of Sri Lanka and I am initiative-taking and determined individual who values teamwork, work hard, and am known for my leadership abilities. I have a genuine interest in technology and enjoy staying updated with the latest advancements. I also have an eye for aesthetics, which I bring to my work in software engineering. I am committed in learning and growing in this field.<b>"</b>
+                                        </p>
+                                    </div>
+                                    <div class="container text-center" style="font-size: 20px;">
+                                        <ul>
+                                            <li>
+                                                <div class="row" >
+                                                    <div class="col">
+                                                        <div><p>Microsoft Learn Student Ambassador Profile: <a style="text-decoration: none;" href="https://mvp.microsoft.com/en-US/studentambassadors/profile/25d41105-89ab-4e00-b509-0666c467e8c8" target="_blank">https://microsoft/studentambassadors/akila</a></p></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div><p>Email: <a style="text-decoration: none;" href="mailto:atwemp@gmail.com" target="_blank">atwousl@gmail.com</a></p></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div><p>LinkedIn: <a style="text-decoration: none;" href="https://www.linkedin.com/in/akila-wanninayake-4340b0217/" target="_blank">https://www.linkedin.com/in/akila-wanninayake-4340b0217</a></p></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div><p>Date of Birth: 18/06/2000</p></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div><p>Residance: Mahailluppallama, Anuradhapura</p></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col" id="video-div">
+                                    <div class="d-flex justify-content-center">
+                                      <!--  <img id="img" src="aboutMe.gif" alt="about" style="max-width: 100%;"> -->
+                                        <video id="video" autoplay loop muted style="max-width: 100%;  height: 550px;">
+                                            <source src="aboutMe.mp4" type="video/mp4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section_3" class="section_3" style="background-color: #ebf2fb; padding-bottom: 40px;">
+            <div id="back">
+                <div >
+                    <div  class="projects">
+                        <div class="container">
+                            <div class="row">
+                                <div class="square">
+                                    <img src="java.png" alt="java" width="60px" height="60px">
+                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                        <span style="font-size: 40px;">Ruhiru</span><br>
+                                        <span>"An efficient and ease of use digital solution for blood donation 
+                                            to provide a convenient and accessible way for users to update the blood donation book and to find solutions for some other problems in a mobile-first way."</span>
+                                        <br><br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                        <br>
+                                        <span style="color: #002f75;">Andriod Studio, Java, Figma, Github</span>
+                                    </p>
+                                </div>
+                                <div class="square">
+                                    <img src="laravel.png" alt="java" width="60px" height="60px">
+                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                        <span style="font-size: 40px;">AthaHitha</span><br>
+                                        <span>"AthaHitha is a web solution which will web application becomes crucial as it makes a digital platform, and it addresses the issue faced by individuals and organizations who want to donate but find it difficult to allocate time for traditional donation methods.
+                                            "</span>
+                                        <br>
+                                        <br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                        <br>
+                                        <span style="color: #002f75;">HTML/CSS/Java Script, Laravel, SQL, ClickUp, Figma, Github</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="square">
+                                    <img src="react.png" alt="java" width="60px" height="60px">
+                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                        <span style="font-size: 40px;">Reader</span><br>
+                                        <span>"Reader is a native mobile application UI developed using React Native. Reader is an attempt to 
+                                            provide a digital library in a mobile first way.
+                                            "</span>
+                                        <br>
+                                        <br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                        <br>
+                                        <span style="color: #002f75;">React Native, Figma, Github</span>
+                                    </p>
+                                </div>
+                                <div class="square">
+                                    <img src="python.png" alt="java" width="60px" height="60px">
+                                    <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                        <span style="font-size: 40px;">Enki</span><br>
+                                        <span>"Enki is a simple encyptor and decryptor pythn desktop GUI application has capability of encrypting user inputs
+                                            and to decrypt them back to the orginal message. Developed using Pythons' TkInter lirary.
+                                            "</span>
+                                        <br>
+                                        <br><span style="font-weight: bold; font-size: 20px;">Tools & Technologies</span>
+                                        <br>
+                                        <span style="color: #002f75;">Python, Figma, Github</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section id="section_4" class="section_4" style="background-color: #cdcdcd; padding-bottom: 40px;">
+            <div>
+                <div class="skills">
+                    <div>
+                        <div class="line_container">
+                            <center><div class="topText">
+                                <h1>What are my capabilities?</h1>
+                            </div>
+                            <div>
+                                <h1 class="display-5">My Skills</h1>
+                                <hr class="line" />
+                            </div></center>
+                            
+                        </div>
+                    </div>
+                    <div class="all-skills" >
+                        <div class="main-div">
+                            <div class="left-div">
+                                <!-- Image Goes Here -->
+                                <img src="skill.png" alt="Image" width="600px" height="450px"/>
+                            </div>
+                            <div class="right-div" style="font-family: Arial, Helvetica, sans-serif;">
+                                <div class="top-info">
+                                    <!-- Top Information -->
+                                    <div class="column">
+                                        <h3>Design</h3>
+                                        <p>Frontend Design</p>
+                                        <p>UI/UX Design</p>
+                                        <p>Web/Mobile Design</p>
+                                        <p>Database Design</p>
+                                        <p>Wireframing</p>
+                                    </div>
+                                    <div class="column">
+                                        <h3>Development</h3>
+                                        <p>Mobile App Development (Android)</p>
+                                        <p>Native Mobile UI Development</p>
+                                        <p>Web development</p>
+                                    </div>
+                                    <div class="column">
+                                        <h3>Management</h3>
+                                        <p>Project Management</p>
+                                        <p>Cloud</p>
+                                    </div>
+                                    <div class="column">
+                                        <h3>Soft Skills</h3>
+                                        <p>Team Work</p>
+                                        <p>Time Management</p>
+                                        <p>Adaptability</p>
+                                    </div>
+                                </div>
+                                <div class="bottom-info" style="padding-top: 20px;">
+                                    <!-- Bottom Information -->
+                                    <center><h2>Tools & Technologies</h2></center>
+                                    <div class="image-container">
+                                        <img src="python.png" alt="Image 1" />
+                                        <img src="java2.png" alt="Image 2" />
+                                        <img src="react.png" alt="Image 3" />
+                                        <img src="laravel.png" alt="Image 3" />
+                                        <img src="sql.png" alt="Image 3" />
+                                        <img src="html.png" alt="Image 3" />
+                                        <img src="css.png" alt="Image 3" />
+                                        <img src="js.png" alt="Image 3" />
+                                        <img src="xamp.png" alt="Image 3" />
+                                        <img src="azure.png" alt="Image 3" />
+                                        <img src="figma.png" alt="Image 3" />
+                                        <img src="github.png" alt="Image 3" />
+                                        <img src="vs.png" alt="Image 3" />
+                                        <img src="brain.png" alt="Image 3" />
+                                        <!-- Add more images as needed -->
+                                    </div>
+                                </div>
+                                <center>
+                                    <div class=" button">
+                                        <Button onclick="downloadCV()">Download my CV</Button>
+                                    </div>
+                                </center> 
+                            </div>
+                        </div>                                    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section_5" class="section_5" style="background-color: #1d1d1d; padding-bottom: 40px;">
+            <div>
+                <div>
+                    <div class="achievements">
+                        <div class="content-width">
+                            <div>
+                                <div class="line_container">
+                                    <center><div class="topText">
+                                        <h1 >What made myself a value?</h1>
+                                    </div>
+                                    <div>
+                                        <h1 class="display-5" style="margin-top: 10px; color: #818181;">My Achievements</h1>
+                                        <hr class="line" />
+                                    </div></center>
+                                </div>
+                                <div style="margin-left: 3vw; margin-right: 3vw;">
+                                    <center><p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; margin-top: 20px; color: #a9b0bd;">
+                                        "I am actively involved in the tech community as a Student Ambassador at Microsoft Learn Student Ambassadors. In these roles, I facilitate learning sessions. I have also earned multiple certifications from EDUCBA and The Open University in topics such as JavaScript, Interpersonal Skills, and ICT Systems. 
+    
+                                        Besides my academic and professional interests, I enjoy reading, watching films, and playing music. I have won provincial and all-island awards for my performance, and I am currently learning from a renowned master. I believe that music enhances my creativity and analytical skills, and enriches my cultural awareness."
+                                    </p></center>
+                                </div>
+
+                                <div style="margin-left: 3vw; margin-right: 3vw;">
+                                    <div class="text-animation">
+                                        <p class="text">Text 1</p>
+                                        <p class="text">Text 2</p>
+                                        <p class="text">Text 3</p>
+                                    </div>
+                                </div>
+                                <div id="container">
+                                    <span id="text1"></span>
+                                    <span id="text2"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <script>
+                        /*
+                        const elts = {
+                            text1: document.getElementById("text1"),
+                            text2: document.getElementById("text2")
+                        };
+
+                        const texts = [
+                            "If",
+                            "You",
+                            "Like",
+                            "It",
+                            "Please",
+                            "Give",
+                            "a Love",
+                            ":)",
+                            "by @DotOnion"
+                        ];
+
+                        const morphTime = 1;
+                        const cooldownTime = 0.25;
+
+                        let textIndex = texts.length - 1;
+                        let time = new Date();
+                        let morph = 0;
+                        let cooldown = cooldownTime;
+
+                        elts.text1.textContent = texts[textIndex % texts.length];
+                        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+                        function doMorph() {
+                            morph -= cooldown;
+                            cooldown = 0;
+
+                            let fraction = morph / morphTime;
+
+                            if (fraction > 1) {
+                                cooldown = cooldownTime;
+                                fraction = 1;
+                            }
+
+                            setMorph(fraction);
+                        }
+
+                        function setMorph(fraction) {
+                            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+                            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+                            fraction = 1 - fraction;
+                            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+                            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+                            elts.text1.textContent = texts[textIndex % texts.length];
+                            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+                        }
+
+                        function doCooldown() {
+                            morph = 0;
+
+                            elts.text2.style.filter = "";
+                            elts.text2.style.opacity = "100%";
+
+                            elts.text1.style.filter = "";
+                            elts.text1.style.opacity = "0%";
+                        }
+
+                        function animate() {
+                            requestAnimationFrame(animate);
+
+                            let newTime = new Date();
+                            let shouldIncrementIndex = cooldown > 0;
+                            let dt = (newTime - time) / 1000;
+                            time = newTime;
+
+                            cooldown -= dt;
+
+                            if (cooldown <= 0) {
+                                if (shouldIncrementIndex) {
+                                    textIndex++;
+                                }
+
+                                doMorph();
+                            } else {
+                                doCooldown();
+                            }
+                        }
+
+                        animate(); */
+                    </script>
+                    
+                    
+                    
+                    <!--<div class="container">
+                        <div class="void" id="void">
+                            <div class="crop">
+                                
+                            <ul id="card-list" style="--count: 6;">
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                                        <li><div class="card"><a href=""><span class="model-name">Gretel-ACTGAN</span><span>Model for generating highly dimensional, mostly numeric, tabular data</span></a></div></li>
+                            </ul>
+                            <div class="last-circle"></div>
+                            <div class="second-circle"></div>
+                            </div>
+                            <div class="mask"></div>
+                            <div class="center-circle"></div>
+                        <div>
+                            
+                            <div class="certificate-boxes">
+                                
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                
+            </div>
+            <div class="achievements-section">
+                <h2 style="font-family:  Arial, Helvetica, sans-serif;">Courses & Certificates</h2>
+                <div class="cont" style="background-image: linear-gradient(to bottom right, #ffffff, ffffff);">
+                    
+                </div>
+            </div>
+        </section>
+        <section class="section_7">
+            
+        </section>
+        <section id="section_6" class="section_6" style="background-color: #f4f4f4;">
+            <div>
+                <div>
+                    <div class="line_container">
+                        <div >
+                            <center><div class="topText">
+                                <h1>My Journey</h1>
+                            </div>
+                            <div>
+                                <h1 class="display-5" style="">Education</h1>
+                                <hr class="line" />
+                            </div></center>   
+                        </div>
+                    </div>
+                    <div class="timeline">
+
+                        <!--first-->
+                        <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+                            <div class="timeline__event__icon ">
+                                <!-- <i class="lni-sport"></i>-->
+                    
+                            </div>
+                            <div class="timeline__event__date">
+                                <img src="pngegg.png" alt="ousl" style="border-radius: 50%; width: auto; height: 150px;">
+                            </div>
+                            <div class="timeline__event__content ">
+                                <div class="timeline__event__title">
+                                    Bachelor of Software Engineering (Hons)
+                                </div>
+                                <div class="timeline__event__description">
+                                    <h3>The Open University Sri Lanka</h3>
+                                    <h6>2021 - Present</h6>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!--second-->
+                    
+                        <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+                            <div class="timeline__event__icon">
+                                <!-- <i class="lni-sport"></i>-->
+                    
+                            </div>
+                            <div class="timeline__event__date">
+                                <img src="pngegg3.png" alt="ousl" style="border-radius: 50%; width: auto; height: 120px;">
+                            </div>
+                            <div class="timeline__event__content">
+                                <div class="timeline__event__title">
+                                    G.C.E.Advanced Level (Physical Stream - EM)
+                                </div>
+                                <div class="timeline__event__description">
+                                    <h3>Central Collage Anuradhapura</h3>
+                                    <h6>2017 - 2020</h6>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!--third-->
+                    
+                        <div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+                            <div class="timeline__event__icon">
+                                <!-- <i class="lni-sport"></i>-->
+                    
+                            </div>
+                            <div class="timeline__event__date">
+                                <img src="pngegg2.png" alt="ousl" style="width: auto; height: 120px;">
+                            </div>
+                            <div class="timeline__event__content">
+                                <div class="timeline__event__title">
+                                    G.C.E.Ordinary Level (EM)
+                                </div>
+                                <div class="timeline__event__description">
+                                    <h3>Ganthiriyagama National School</h3>
+                                    <h6>2006 - 2016</h6>
+                                </div>
+                    
+                            </div>
+                        </div>
+                        
+                    </div>
+            </div>
+        </section>
+        <section id="section_7" style="background-color: #0d6efd;">
+            <div>
+                <div>
+                    <div>
+                        <h1 class="display-2"></h1>
+                    </div>
+                </div>   
+                    
+            </div>
+        </section>
+        <section class="footer">
+        <footer class="contact-footer">
+            <div class="container align-items-center">
+                <div class="footer-content">
+                    <div class="container">
+                        <div class="column">
+                            <div class="row">
+                                <center><h3> ⁌ Get In Touch ⁍ </h3></center>
+                            </div>
+                            <div class="row">
+                                <div class="social-links">
+                                    <a href="#" class="social-icon"><img src="icons8-linkedin-100.png" alt="LinkedIn"></a>
+                                    <a href="#" class="social-icon"><img src="icons8-facebook-100.png" alt="Twitter"></a>
+                                    <a href="#" class="social-icon"><img src="icons8-github-100.png" alt="GitHub"></a>
+                                    <!-- Add other social icons as needed -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="contact-form">
+                        <div class="container overflow-hidden text-center">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="p-3">
+                                        <button class="mubtn" onclick="sendEmail()" style="background-color: #0d6efd; width: 180px; height: 60px;
+                                        border-radius: 10px; color: #f1f1f1; font-size: larger;">✉ Email</button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3">
+                                        <button onclick="redirectToWhatsApp()" class="mubtn" style="background-color: greenyellow; width: 180px; height: 60px;
+                                        border-radius: 10px; color: #000000; font-size: larger;">✆ WhatsApp</button>
+                                    </div>
+                                    <script>
+                                        function sendEmail() {
+                                            window.open('atwemp@gmail.com');
+                                        }
+
+                                        function redirectToWhatsApp() {
+                                            var phoneNumber = '0769497933'; // Replace with your desired phone number
+                                            window.location.href = 'https://wa.me/' + phoneNumber;
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 40px;">
+                            <h3>Send me a quick message</h3>
+                            <form id="footer-form" action="#" method="POST">
+                                <input type="text" placeholder="Your Name" required>
+                                <input type="email" placeholder="Your Email" required>
+                                <textarea placeholder="Your Message" required></textarea>
+                                <button type="submit" style="border-radius: 10px;">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p style="text-align: center; color: #818181; margin-top: 20px;">ⓒ 2023 Akila Wanninayake | All rights reserved</p>
+                </div>
+            </div>
+            </footer>
+        </section>
+        <script>
+            function downloadCV() {
+              const pdfPath = 'Akila_Wanninayake_CV.pdf';
+              const link = document.createElement('a');
+              link.href = pdfPath;
+              link.target = '_blank'; // Opens the link in a new tab
+              link.download = 'Akila_Wanninayake_CV.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }
+        </script>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuBtn = document.getElementById('menuBtn');
+                const menuOverlay = document.getElementById('menuOverlay');
+                const scrollToTopBtn = document.getElementById('scrollToTop');
+                const navLinks = document.querySelectorAll('.navbar a');
+
+                menuBtn.addEventListener('click', function() {
+                    menuOverlay.classList.toggle('open');
+                    scrollToTopBtn.style.display = 'block';
+                });
+
+                scrollToTopBtn.addEventListener('click', function() {
+                    menuOverlay.classList.remove('open');
+                    scrollToTopBtn.style.display = 'none';
+                });
+
+                // Close menu when any nav link is clicked
+                navLinks.forEach(function(navLink) {
+                    navLink.addEventListener('click', function() {
+                        menuOverlay.classList.remove('open');
+                        scrollToTopBtn.style.display = 'none';
+                    });
+                });
+            });
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            
+            $(document).ready(function() {
+                $(window).on("scroll", function() {
+                    var section1 = $(".section_1");
+                    var nav = $(".navbar");
+                    var section1Top = section1.offset().top;
+                    var section1Bottom = section1Top + section1.outerHeight();
+                    var scrollTop = $(this).scrollTop();
+
+                    if (scrollTop >= section1Top && scrollTop < section1Bottom) {
+                        nav.removeClass("scrolled");
+                    } else {
+                        nav.addClass("scrolled");
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('a[href^="#"]').on('click', function(e) {
+                    e.preventDefault();
+
+                    var target = $(this).attr('href');
+                    $('html, body').animate({
+                        scrollTop: $(target).offset().top
+                    }, 800);
+                });
+            });
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</head>
+</html>
